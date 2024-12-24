@@ -10,7 +10,7 @@
         </li>
         <li><a><i class="fa fa-user"></i> User <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="production/form.html">Add User</a></li>
+            <li><a href="{{ route('admin.add.user') }}">Add User</a></li>
             <li><a href="production/form_advanced.html">All User</a></li>
           </ul>
         </li>
