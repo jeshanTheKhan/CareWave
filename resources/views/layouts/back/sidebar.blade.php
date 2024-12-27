@@ -13,7 +13,7 @@
             <li><a href="{{ route('admin.add.user-type') }}">Add User-Type</a></li>
             <li><a href="{{ route('admin.all.user-type') }}">All User-Type</a></li>
             <li><a href="{{ route('admin.add.user') }}">Add User</a></li>
-            <li><a href="production/form_advanced.html">All User</a></li>
+            <li><a href="{{ route('admin.all.user') }}">All User</a></li>
           </ul>
         </li>
         <li><a><i class="fa fa-edit"></i> Category <span class="fa fa-chevron-down"></span></a>

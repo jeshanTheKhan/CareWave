@@ -58,27 +58,27 @@
              </div>
              <div class="x_content">
                  <br />
-                 <form id="demo-form2" method="POST" action="{{ route('admin.save.user') }}" data-parsley-validate class="form-horizontal form-label-left">
+                 <form id="demo-form2" method="POST" action="{{ route('admin.saveupdate.user') }}" data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
-                     <div class="item form-group">
-                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span class="required">*</span>
-                         </label>
-                         <div class="col-md-6 col-sm-6 ">
-                             <input type="text" id="first-name" required="required" name="fname" class="form-control ">
-                         </div>
-                     </div>
-                     <div class="item form-group">
-                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="lastname">Last Name <span class="required">*</span>
-                         </label>
-                         <div class="col-md-6 col-sm-6 ">
-                             <input type="text" id="last-name" name="lastname" required="required" class="form-control">
-                         </div>
-                     </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="first-name" name="header1" value="{{ $data->name }}" required="required" class="form-control ">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Last Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="first-name" name="header2" value="{{ $data->lastName }}" required="required" class="form-control ">
+                        </div>
+                    </div>
                      <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align ">Select User Type</label>
                         <div class="col-md-6 col-sm-6 ">
-                            <select class="form-control" name="usertype">
-                                <option>Choose option</option>
+                            <select class="form-control" name="user">
+                                <option>{{ $data->user_role }}</option>
                                 @foreach ($user as $user)
                                 <option value="{{ $user->type }}">{{ $user->type }}</option>
                                 @endforeach
@@ -86,19 +86,22 @@
                             </select>
                         </div>
                     </div>
-                     <div class="item form-group">
-                         <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">E-mail Address</label><span class="required">*</span>
-                         <div class="col-md-6 col-sm-6 ">
-                             <input id="middle-name" class="form-control" type="email" required="required" name="email">
-                         </div>
-                     </div>
-                     <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Password</label><span class="required">*</span>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">E-Mail <span class="required">*</span>
+                        </label>
                         <div class="col-md-6 col-sm-6 ">
-                            <input id="middle-name" class="form-control" type="text" required="required" name="password">
+                            <input type="email" id="last-name" name="email" value="{{ $data->email }}" required="required" class="form-control">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Password <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="last-name" value="{{ $data->password }}" name="password" required="required" class="form-control">
                         </div>
                     </div>
                      <div class="ln_solid"></div>
+                     <input type="hidden" name="c_id" value="{{ $data->id }}">
                      <div class="item form-group">
                          <div class="col-md-6 col-sm-6 offset-md-3">
                             <button class="btn btn-primary" type="button" onclick="window.history.back();">Cancel</button>
